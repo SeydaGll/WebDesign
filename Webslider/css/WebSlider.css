@@ -1,0 +1,16 @@
+﻿*{
+    padding:0;
+    margin:0;
+    border:0;
+}
+ul {
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
+#Slider{width:720px;} /*dış divimin genişliği resmimin genişliğinde olsun*/
+.Slider{width:720px;height:360px;overflow:hidden;}
+.Slider ul li{width:720px;height:360px;float:left;}
+.SliderButton{padding:15px 0px 0px;text-align:right;}
+.SliderButton a{background-color:darkkhaki;color:black;padding:6px;border-radius:15%; }

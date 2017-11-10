@@ -1,0 +1,247 @@
+﻿/*CSS ****/
+h1{color:blue;font-size:12px;} /*burada h1 selector yani seçicidir.İçerisinde ; ile ayrılmış olan kısımlar bildirimdir.h1 stil oluşturmak istediğin html öğesidir.
+                               her bildirimde : ile ayrılmış bir CSS özellik adı(color,font-size..) ve bir değer(blue,12px) bulunur.Bir CSS bildirimi her zaman
+    ; ile biter ve bildirim blokları {...} ile çevrilidir.CSS seçicileri HTML elementlerini, element ismi,id,class,attribute ve daha fazlasına dayanarak bulmak(yada seçmek)
+    için kullanılır.*/
+#idİsmi{
+    color:red;           /*html kodunda örneğin <h1 id="idİsmi">Metin</h1> diye yazdığına css de stil tanımlamak için #idİsmi{} diyerek stil tanımlarsın*/
+} 
+.classİsmi{
+    color:red;            /*buda belirli bir sınıfa ait üyelere stil tanımalamak için kullanılır.Mesela html kodunda her p ye <p class="classİsmi">...</p> yazdın diyelim*/
+}                           /*bu p lere css de stil tanımlamak için .classİsmi{..} diyerek stil tanımlarsın!*/
+p.classİsmi{
+    text-align:center;     /*mesela html kodunda hem h1 hem de p classİsmi diye sınıflandırılmış diyelim.Yani her ikisininde class isimleri aynı.Ama ben sadece p nin*/ 
+    color:blue;                 /*ortalanmasını ve renginin mavi olmasını istiyorum.O zaman p yi istediğim için .  dan önce elementin ismi yani p.classİsmi{} diyerek yazarm*/
+}       
+p,h1,h2 {                 /*aynı tarz stil tanımlarına sahip elementleriniz varsa ayrı ayrı yazmak yerine kodu en aza indirmek için her seçiciyi virgülle ayırarak*/
+    color:red;                      /*gruplandırmak daha iyii olucaktır..*/
+    text-align:center
+}    
+h1{margin-left:20px;}     /*burada 20 yani değeri ile birimi yani px arasında boşluk bırakma.20 px değil 20px yazılır !!!*/     
+
+/*mesela harici bir stil sayfasında h1 içn bir stil tanımladın diyelim.Daha sonra geldin h1 e  dahili (html sayfasında style etiketleri arasında) bir stil tanımladın.
+Eğer iç stil dış stil sayfasına yapılan bağlantıdan sonra tanımlanırsa <h1> öğesi iç stile göre tanımlanır..    Eğer iç stil dıs stil bağlantısına yapılan bağlantıdan 
+önce tanımlanırsa <h1> dış stile göre tanımlanır..Çünkü her ikiside <style> etiketleri arasında yazılıyo unutma!.Sıra önemli111
+Bir satır içi stil(belirli bir HTML öğesinin içinde) en yüksek önceliğe sahiptir.Bu <head> etiketinde tanımlanan bir stili veya harici bir stil sayfasında veya bir tarayıcı
+varsayılan değerini geçersiz kılacaktırr!!!!!!*/      
+renk kullanımları
+<h2 style="background-color:red">       /*büyük - küçük duyarlı değildir.red ve RED de yazılabilir..*/
+Red background-color
+</h2>
+
+<h2 style="background-color:rgb(255, 0, 0)">   /*r:red g:green b:blue..0 ile 255 arasındaki rengin yoğunluğunu tanımlar*/
+Background-color set by using rgb(255, 0, 0)
+</h2>
+
+<h2 style="background-color:#FF0000">     /*#RRGGBB RR:red GG:green BB:blue  00 ile FF arasında hex değerleri tanımlanır..*/
+Background-color set by using #FF0000             /*ff00000 ile FF00000 aynıdır.Büyük-küçük harf duyarlı değldir*/
+</h2>
+/*GRİ TONLARI GENELLİKLE 3 IŞIK KAYNAĞI İÇİN EŞİT DEĞERLER KULLANILARAK TANIMLANIR*/
+/*DAHA GELİŞMİŞ RENKLER İÇİN CSS3 COLORS EĞİTİMİNDE HSL VE RGBa RENKLERİ HAKKINDA ÖĞRENECEKSİN*/
+
+body{background-color:lightblue;} /*arkaplan  rengi bu şekilde ayarlanır*/
+body{background-image:url("resim.jpg")}    /*bir sayfanın arka plan resmi bu şeklide ayarlanır.Varsayılan olarak  resim tüm elementi kapsayacak şekilde ayarlanır*/
+body{background-image:url("görüntü.png");  /*diyelim bu resim sürekli yatay olarak sayfada alt alta tekrarlanıyor*/
+     background-repeat:repeat-x;          /*böyle diyerek görüntüyü sadece yatay olarak görüntülemiş olucam.yani bir tane görüntü oluşturmuş olucam*/
+}                                   /*dikey olarak tekrarlamak istiyorsan background-repeat:repeat-y ; diceksin*/
+body{background-image:url("img_tree.png");  /*sadece bunu yazarsam sayfada dikey ve yatay olarak tekrarlanan bir sürü olucak*/
+     background-repeat:no-repeat;               /*bunu diyerek arakaplan görüntüsünü yalnızca bir kez göstermiş oldum.ama metin ile resim üst üste geldi.hoş olmadı.o zaman;*/
+     background-position:right top;         /*böylece resmim sağa yanda metnim solda oldu.resim sağ köşede yukarıda oldu..*/
+     margin-right: 200px;                       /*metnim görüntünün üzerine gelmedi.görüntüye değmeden satır atladı*/
+     background-attachment:fixed;                /*HOCAYA SORRR!!..Arka plan resminin sabit mi yoksa sayfanın geri kalan kısmıyla birlikte mi kaydırılıp atlamayacağını ayarlar*/
+}
+
+/*background-image Bazı görüntülerde varsayılan olarak hem yatay hem de dikey olarak tekrarlar.Bazı resimler ya sadece yatay olarak yada dikey olarak ayarlannmalıdır
+    yoksa kötü bir görüntü oluluyr */
+
+body{
+    background:#ffffff url("img_tree.png") no-repeat right top;  /*kodu kısaltmak için tek bir özellikle(background) bütün arka plan özelliklerini belirtmekte mümkündür*/
+}                                                                 /*background özelliğiyle sırası 1.renk 2. image 3. repeat 4. background attachment 5.pozisyon*/
+                                                                 /*eğer bu değerlerden bir eksikse diğerleri bu sırayla olduğu sürece fark etmezz!!*/
+
+CSS border*** 
+/*Css border bir öğenin sınırını tarzı,genişliği ve rengini belirtmek için izin verir..*/
+p{border-style:dotted;}         /*noktalı kenarlık yapıyo*/                                            
+p{border-style:dashed;}         /*kesikli kenarlık tanımnlıyo*/                                                    
+p{border-style:solid;}          /*düz bir sınır tanımlıyo*/                                                      
+p{border-style:double;}         /*çift kenarlık tanımlıyo*/                                                     
+p{border-style:groove;}         /*3D(3 boyutlu) oluklu bir kenarlık tanımlıyo.etkisi sınır-renk değerine bağlıdır*/                                                     
+p{border-style:ridge;}          /*3D(3 boyutlu) düzleştirilmiş bir sınır tanımlıyor.  Etkisi sınır-renk değerine bağlıdır.*/                                                     
+p{border-style:inset;}          /*3D yerleştirme kenarlığı tanımlıyor.Etkisi sınır-renk değerine bağlıdır*/                                                     
+p{border-style:outset;}         /*3D başlangıç sınırı tanımlıyo.Etkisi sınır-renk değerine bağlıdır.*/                                                       
+p{border-style:none;}           /*Sınır tanımlamıyor.*/                                                       
+p{border-style:hidden;}          /*Gizli bir kenarlık tanımlıyo*/ 
+p{border-style:dotted dashed solid double;}         /*border-style bu şekilde üst(top),right(sağ),alt(bottom),sol(left) şeklindede tanımlanabiliyo*/   
+border-style: dotted solid double dashed;  /*eğer böyle ise üst dotted sağ solid alt double sol dashed dır*/  
+border-style: dotted solid double;           /*üst dotted sağ ve sol solid alt double dır*/
+border-style: dotted solid;                     /*üst ve alt dotted  sağ ve sol solid dir*/
+border-style: dotted;                               /*tüm kenarlar dotted dır*/  
+
+/*CSS anahat yani outline özelliğide var.border gibi outline-style .. diye özellikler var..*/                                                  
+      
+Sınır Genişliği(border-width)
+/*Genişlik (px,pt,cm,em vb) olarak veya daha önceden tanımlanmış 3 değerden birini kullanarak(thin,medium,thick(kalın)) ayarlanabilir.*/          
+/*Genişlik üst kenar,sağ kenar,alt kenar ve sol kenar için tanımlanabilir*/   border-width(2px 10px 4px 20px);                              
+Sınır Rengi(border-color)
+/*isim,hex ve rgb olabilir.Yine üst sağ alt ve sol için ayrı ayrı tanımlayabilirim.*/   
+p{ border : 5px solid red;}        /*sırasıyla kodu kısaltmak için genişlik,stil ve color yazılır*/    
+                                   
+p {
+    border-left: 6px solid red;        /*burada tek bir kenar için tüm bireysel kenar özellikerini yazabiliriz. burada sadece sol kenar 6px kalınlığında kırmızı düz bir çizgidir*/
+    background-color: lightgrey;
+}    
+p{border-radius: 5px} /*bu özellik kenarların köşelerini ovalleştiriyor.değer arttıkça yuvarlaklık daha da artıyor*/           
+/*border-top, border-right, border-bottom, border-left...*/    
+/*border-top-color, border-left-style,  border-right-width, border-bottom-style*/  
+
+CSS MARGİNS****
+/*Sınırın(kenarlığın) dışındaki beyaz alan boyutunu ayarlamak için kullanlır.CSS ile kenar boşlukları üzerinde tam bir kontrole sahip olursunuz.
+Bir öğenin her bir kenrının boşluğunu ayarlamak için CSS özelliği vardır..*/ 
+/*margin-top,  margin-right,  margin-bottom,  margin-left*/
+p{margin:auto;}  /*Tarayıcı marjı hesaplıyo.sınır içerisindeki elementi yatay olarak merkezliyo.element daha sonra belirtilen genişliği alıyo ve kalan alan 
+                     sağ ve sol kenar boşlukları arasında eşit olarak paylaştırılıyor.ayrıca bunu yazdıktan sonra mesela başlık daha yukarıya çıkıp ortalanıyo.üstteki 
+                     boşluk biraz daha azalıyor sanki.tam merkezleniyo */
+                 
+p{margin:100px;}  /*px,pt,cm vb cinsinden bir kenar boşluğu belirtiyo*/
+p{margin:%..;}   /* %  elementin genişliğinin yüzdesi cinsinden bir margin içeriyo*/
+p{margin:inherit;}   /*kenar boşluğunun üst öğeden(kaynaktan heralde) devralınması gerektiğini belirtiyo.mesela yukarıda div elementi var mesela div{margin-left:100px}
+                                    diyo.ben aşağıda p{margin-left:inherit diyerek yukarıdaki div in marginini kullanmış oluyorum}*/
+
+p {
+    margin: 100px 150px 100px 80px;    /*kodu kısaltmak için bu şekilde kullanılır.üst,sağ,alt,sol sırası ile*/
+}
+margin: 25px 50px 75px 100px;    /*üst:25 px sağ:50px  alt:75px sol:100px*/
+margin: 25px 50px 75px;             /*üst 25px , sağ ve sol::after 50px  alt:75px*/
+margin: 25px 50px;                 /*üst ve alt:25   sağ ve sol:50*/
+margin: 25px;                              /*bütün tarafın boşluğu 25*/
+
+CSS PADDİNG******
+/*Marginden farklı olarak içeiğin etrafında boşluk oluşturmak için kullanılıyo.Sınırın içindeki bir elementin içeriği etrafındaki bir alanı temizlio
+MARGİN DEKİ TÜM YAZDIKLARIN PADDİNG İÇİNDE GEÇERLİ!!!!!!!!!*/
+
+CSS HEİGHT VE WİDTH
+/*Bir elementin yükseklik ve genişlik hesaplamasında kulllanlır.auto ayarlanabilir.bu varsayılandır.browserın yükseklik ve genişliği hesapladığı anlamanına gelir.
+veya blok içerisi % veya px,cm, gibi uzunluk değerleriyle belrtilebilir..*/  <div></div> button bit elementtir
+/*height ve width özellikleri padding,border ve margin içermezler.Height ve width bir elementin paddin,border ve margin içindeki alanın yükseklik ve genişliğini ayarlarlar*/
+CSS METİN HİZALAMA**
+h1{text-align:center;}  /*text-align metnin yatay hizalamasını ayarlamak için kullanılır.ortalanmış bir koddur.Bu sağda yada solda olabilit*/
+h1{text-align:justify;}  /*her satır eşit genişliğe sahiptir.sağ ve sol kenar boşlukları düz olacak şekilde gerilir(gazete ve dergilerdeki gbi)*/
+h1{text-decoration:none;}    /*text decoration metinden süslemeleri kaldırmak veya ayarlamak için kullanılıyo.burada bağlantının altının çizgii kaldırılıyo*/
+                            /*overline üstü çizili yapıyo.line-through yazının tam üzerinden çiziyo.underline da altı çizili yapıyo*/
+                            /*ama bağlantısı olamayn bir metnin altını çizmek önerilmez.bu okuyucuyu karıştırır.*/
+h1{text-transform:uppercase;}     /*text transform bir metinde büyük ve küçük harfleri belirtmek için kullanılıo*/
+                                  /*herşeyi büyük(uppercase) veya küçük(lowercase) harf haline getirmek veya her kelimenın ilk harfini(capitalize) büyük harf yapmak için kullanılır*/
+p{text-indent:50px;}    /*paragrafın ilk satırından  girintisini belirtmek içn kullanılır.yani ilk satır 50px içeriden başlıcak*/                          
+h1{letter-spacing:2px;}    /*metinde karakterler arasındaki boşluğu artırıyo yada azaltıyo.azaltmak için -2px gibi negatif değerler yazıcaksın..*/
+h1{word-spacing:10px;}       /*metinde kelimeler arasındaki boşluğu artırıyo yada azaltıyo.azaltmak için -5px gibi negatif değerler yazacaksın*/
+p{line-height: 0.7}   /*birçok browserda stardart satır yüksekliği yaklaşık %110 %120 kadardır.0.7 diyerek bu boşluğu daha da daraltmış oldum*/
+p{direction:rtl;}        /*metin yönünü değiştirmek için kullanılıyo..metin sağ köşeden yazmaya başlıyo.*/
+h1{text-shadow:3px 2px red;}    /*metin gölgesi yapıyo. yatay gölge 3px konumunda dikey gölge 2px konumunda ve gölgenin rengi kırmızı oluyo*/
+p{white-space:nowrap;}         /*metin sayfanın sonuna geldiğinde alt satıra atlamayı bırakıyo.yazı atlamadan dümdüz devam ediyo*/
+img{vertical-align:text-bottom;}   /*bir img nin dikey konumunu ayarlıyo.buarada img nin ynında yazan yazı img nin altından başlıyo*/ 
+ 
+p{ 
+    border:1px solid powderblue;  /*border kenarlık tanımlar.1 px i artırırsan kenarlık kalınlığı artıyo.solid hat çekiyo.powderblue hattın rengi*/
+    padding: 30px;                /*padding metin ile kenarlık arasında boşluk(dolgu) tanımlar.yani içeride boşluk yapıyo.Kenarlıklar arasındaki boşluklar değişmiyo*/
+    margin: 50px;                 /*buda metin ve kenarlık dışında kalan boşlukları ayarlıyo.büyüttükçe o oranda sağda solda ortada boşluklarde büyüyo.İçeride yani metin ve kenarlık arasında boşluklar değişmiyo*/ 
+    #indextetanımladığın"id"ismi    /*bunun örneği hem defterde hem vs de var hocayla yapıldı.id için yaparken # unutma!!<p id="isim>İçerik</p> indexte böyle tanımlanır.."*/
+}
+
+table{
+    border:1px solid black;     /*/*tablo için sınır belirledik.yani tabloyu çerçeveledik aslında.burdan baktığımızda aslında tablo dikdörtgen şeklinde bir çerçeve
+                                   biz bunun içini tr th td ile biçimlendirip bir tablo oluşturuyoruz...bu şekilde kenarlık belirtmezsek kenarlıksız görüntülenir.
+                                             hem tablo hem tablo hücreleri için sınırları tnımlamayı unutma!!*/      
+}
+table,th,td{
+    border:1px dashed black;
+    border-collapse:collapse;      /*table{ boder-collapse:collapse;} tabloyu biraz sıkıştırıyo.yani kenarlıkların bir sınıra daraltılmasını 
+                                             istersek sınır-daralma özelliğini kullanırız(border-collapse)*/                 
+}
+th,td{
+    padding:10px;                  /*bu hücre içerisindeki yazı ile sınırları arasındaki boşluğu belirtir.içerideki boşluğu belirtiyo.
+                                      değeri büyüttükçe boşluklar genişliği.tablo kenarlığı ile dış taraf arasındaki boşluk sabit kalıyo.*/
+}
+th{
+    text-align:left;             /*daha önce söylediğimiz gibi varsayılan olarak th yani tablo başlıkları kalın ve ortalanmıştır
+                                     bunları sola hizalamak istiyosan css text-align özelliği kullanılır!!!*/
+}
+table{
+    border-spacing:15px;           /*kenar boşluğudur.tabloyla hücreler arasındaki boşluklar,hücrelerin kendi arasındaki boşlukları değiştiryo
+                                            yani aslında hücreler arasındaki boşluktur..EĞER BORDER-COLLAPSE YANİ DARALTILMIŞ KENARLIKLARI VARSA
+                                            BU SINIR BOŞLUĞUNUN HİÇ BİR ETKİSİ OLMUYOR!!*/
+}
+
+table#idİsmi{                        /*bu özel bir tabloya tanımladığım özel stil tanımlası yaparken yazılır.unutma önce table yaz sonra # koy sonra*/ 
+    width: 100%;                           /*tanımladığın id ismini yaz..indexte biz bunu tanımladık . bakabilirisn*/
+    background-color: #f1f1c1;
+}
+
+table#t01 tr:nth-child(even) {     /*eğer bir tablo içinde daha fazla stil eklemek istiyosan yani mesela tablo üst bilgilerinin farklı renkte olması,*/
+    background-color: #eee;             /*arkaplan renginin farklı olması, diğer her satırın yazılarının farklı farklı renkte olması,arka plan renklerinin*/
+}                                           /*herbirinin farklı olması için bu şekilde table#idİsmi GİRDikten sonra hangi satırı istiosan onun etiketini yaz(th,tr,)*/
+table#t01 tr:nth-child(odd) {                      /* : koy ve stil tanımlamanı yapp*/
+    background-color: #fff;            /*burada nth-child(even) even:çift dmek yani 2. ve 4. varsa 6. vs çift satırların stillerini değiştiriyo*/
+}                                           /*nth-child(odd) odd:tek demek.buda 1 hariç 3. 5. varsa 7. vs satırların stillerini değiştiriyo.*/
+table#t01 th {                              /* 1. satır zaten tablo başlığıdır.onun için ayrı th{} diyip stil tanımlayabilirsin*/
+    color: white;                         /*burada th ayrı tanımlandığı için nth-child(odd) dan etkilenmicek.*/
+    background-color: black;
+}
+/***********yatay şekilde liste yapmak için stiller*/
+ul{                                     /*yatay bir şekilde liste biçimlendirmek için böyle bir css kullanılır*/
+    list-style-type:none;            
+    margin:0;                  
+    padding:0;
+    overflow:hidden;                       /*BUNU HOCAYA SOR!!(taşma-x ve taşma-y ayarlama kısaltılması)*/
+    background-color:#333333;
+    }
+li{                                     /*BİR LİSTEYİ YATAY OLARAK GÖRÜNTÜLEMEK İÇİN float:left VEYA display:inline kullanırız!!!!!*/
+    float:left                           /*bunu daha önce img de kullandık.bunu kullanınca metin resmin sağından yada solundan başlayabiliyodu.yanı resmin yanı boş kalmıyodu*/
+}                                       /*burada kullandığımız float listeleri sola yanaştırdı*/
+li a {
+     display: block;                        /*display "float" ve "position" ile kombinasyon halinde,bir element için üretilen kutu veya kutuların TÜRÜNÜ belirler*/ /*block şeklinde kutular*/
+     color: white;                          /*block şeklinde kutular*/
+     text-align: center;
+     padding: 16px;
+     text-decoration: none;                /*yazının altının çizili olmasını kaldırıyo*/
+    }
+li a:hover{
+    background-color:#111111;
+}
+*******************
+HTML DÜZEBİ İÇİN CSS
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+BU ARADA YUKARIDA YAZDIKLARINI İNDEX.HTML DE <head></head> bölümleri ARASINDA STYLE ETİKETLERİ TANIMLAYARAK ARASINA da AYNI ŞEKİLDE YAZABİLİRDİNN!!

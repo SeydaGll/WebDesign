@@ -1,0 +1,254 @@
+﻿<!--url(web adresi)-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title style="color: darkgoldenrod"></title>
+	<meta charset="utf-8" />
+    <!--<link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">  burada web sitesinin css dosyasını bulma kısmını hocaya sor!!-->
+    <link rel="stylesheet" text="text/css" href="w3Schools.css"/>   <!--web sayfanın stilini yapmak için kodları harici bir css dosyasında yazdıysan bunu koduna dahil etmek içn
+                                                    html sayfanda <head></head> etiketleri arasına <link /> tanımlayarak referanslarsın-->
+</head>
+<body>
+    <!--linklere bağlantı için--> <a></a> elementi kullanılıyodu.<!--eğer bir  web sitesine bağlanacaksan--> href le gideceğin bu adresi tam url olarak yazıcaksın.
+    yani http:// ile başlatman gerekiyo.ama projen içerisinde bir adrese gideceksen http kullanmadan yani href="dosyaadı.html" gibi yazarak gidebilirsin
+        <!--yani aslında sen aynı web sitesine bağlantı yapıyosun.yani yerel bir bağlantı yapıyosun.dışarıdan bir web sayfasına bağlanmıyosun.
+        tam adres yzmana gerek yok....bağlantıyı tanımladın.  css tarafında varsayılan olarak eğer bu bağlantı henüz ziyarte edilmediyse--> altı çizili ve mavi;
+        ziyaret edildikten sonra yani tıklandıktan sonra altı çizili ve mor görünür.aktifken yani üzerine basıldığı anda görünen renk ise altı çizili ve kırmızıdır
+        <!--eğer bunları değiştirmek istersen kod yazarken;-->
+            a:visited{color:red}  <!--bu ziyeret edildikten sonra sayfaya geri döndüğünde bağlantı artık kırmızıdır-->
+            a:hover {color:green}  <!--bu basılmadan önce fare bağlantının üzerindeyken gözüken renktir-->
+            a:active {color:pink}  <!--bu basıldığı anda görünen renktir-->
+            a:link {color:yellow}  <!--bu ilk defa sayfa açıldığında bağlantı hiç tıklanmadıysa rengi sarı gözükücek,aktifkende sarı gözükücek ama tıklandıktan sonra 
+        varsayılan renkler olarak devam ediyo.yani henüz ziyaret edilmeyen sayfa için.ama tabi varolan bir sayfa yani bağlanılan bir sayfa olmalı.
+        bağlanmadıysa sarı olarak kalıyo-->
+   
+         _blank - <!--Bağlanan belgeyi yeni bir pencerede veya sekmede açar..-->bu önemli**** 
+         _self - <!--Bağlı dokümanı tıklandığı gibi aynı pencerede / sekmede açar (bu varsayılan değerdir)-->
+         _parent - <!--Bağlı belgeyi üst çerçevede açar  aslında tüm çerçevede açtı yani tüm gövdesinde açtı.top la aynı.ama Web sayfanız bir çerçeveye kilitlenmişse, 
+                                      çerçeveyi kırmak için target = "_ top" kullanabilirsiniz:-->
+         _top - <!--Bağlı belgeyi pencerenin tüm gövdesinde açar-->
+    <a href="index.html" target="_blank">ziyaret edilen sayfa</a>  *****bu şeklde yazabilirsin.target attributnde tanımlıcaksın
+
+    <a href="https://coder.com.tr">  <!--yani resme tıklandığı zaman gidilecek adrestir bu-->
+        <img src="resim.png" alt="resim" style="width:42px;height:42px;border:0;">  <!--buda benim sayfamdaki resim yani proje dosyamda olan resim-->
+    </a>  <!--bir resmi bağlantı olarak kullanmak için <img /> etiketini <a></a> etiketi içine yerleştiriyoruz...-->
+    *****************************
+    <h2 id="basınız">Gidilecek text yeri</h2>   <!--mesela bu yazı web sayfamın aşağılarında.o yüzde buna bir tıkla ulaşmak için öncelikle buna bir 
+                                                   id yani yer işareti tanımdadım-->
+
+    <a href="#basınız">h2 ye atla</a>            <!--a etiketi ile gitmek istediğim yerin id sini # işareti ile tanımladık
+                                                 h2 ye atla yazısına tıkladığımda h2 etiketinin içeriğinin yazıldığı yani Gidilecek text yeri
+                                                 yzısına atlıcak. ama bu satırı en üstte yazman daha mantıklı-->
+
+    <a href="ornek.html#burası">17 ye atlamak için tıklayın</a>   <!--burasıda başka web sayfasındaki yer işaretine gidiyor.yani örnek.html deki
+                                                                      17 ye atlıyo.ornek htmlde 17 ye yer işaretini daha önceden burası diye koyduk bakabilirsin..-->
+                                 <!--yani bir sayfadaki yer imlerini tanımlamak için id kullanılır.(id="value").yer işaretine bağlanmak içinde 
+                                               href özelliği kullanılır.(href="#value")-->
+    ******************
+ALT ATTRIBUTE <!--mesela bir resim yükledin web sitene.Ama kullanıcı bu web sitesini açtığında herhangi bir nedenle görüntülüyemezse (yavaş bağlantı,
+    src attribute ndeki bir hata veya kullanıcı bir ekran okuyucu kullanıyorsa) alt attribute nde tanımladığımız metin bu resim için alternatif bir 
+    metin sağlıyor.yani tarayıcı bu resmi bulamazsa alt ta tanımlanan metni gösteriyo.Ama resim görüntülenmişse bu metin çıkmıyo.bu attribut gereklidir.o
+    olmadan bir web sayfası doğru bir şekilde doğrulanmaz...-->
+
+    HTML EKRAN OKUYCULARI
+    <!--html kodunu okuyan,metni dönüştüren,kullanıcıları içeriği dinlemek için izin veren bir yazılım programıdır.ekran okuyucuları
+    görme engelliler için yararlıdır.-->
+
+    <img src="html.gif" alt="bunukullan" style="width:200px;height:200px;" />
+    <!--burada resmin genişliği ve yüksekliğini style ile tanımladık.farkettiysen burada
+        piksel cinsinden olduğunu belirtmen lazım.yani sayıların yanına px yazmalısın
+           yoksa fotoğraf değişmez...-->
+    <img src="html.gif" alt="bunukullan" width="200" height="100" />
+    <!--burada da style ile tanımlamadan genişlik ve yükseklik tanımladık.burada px
+    kullanmadık.çünkü varsayılan olarak piksel cinsinden belirtilmektedir.biz
+      genellikkle böyle kullanıyoruz..-->
+    NOT----><!--bİR Görüntünün genişliğini ve yüksekliğini daima belirt..Eğer belirtilmezse resim yüklenirken  sayfa titreşir!!!!-->
+     <img src="isim.gif" alt="lksl" style="width:auto;height:inherit;"/>   <!--GIF STANDARDI  hareketli görüntülere izin verir-->
+**********************************************************************
+   FLOAT özelliği*****
+    <!--Mesela bir resim yada bir gif ekledin. bu eklenen resmin yanından yazı yazmaya  başladığında yada bir paragraf oluşturduğunda
+    bu paragraf normalde resmin en alt sağ yanından başlar.ama ben resmin sağ tarafının boş kalmasını istemiyorum.metinle doldurmak istiyorum
+    yani aslında görüntünün bi metnin sağına veya soluna kaymasına izin vermek istiyorum..işte burada CSS float özelliği kullnılır...-->
+
+    <p> <img src="resim.jpg" alt="Şeyda" style="width:100px;height:100px;float:left;"/>Mesela bir resim yada bir gif ekledin. bu eklenen resmin yanından 
+    yazı yazmaya  başladığında yada bir paragraf oluşturduğundabu paragraf normalde resim en alt sağ yanından başlar.ama ben resmin sağ 
+    tarafının boş kalmasını istemiyorum.metinle doldurmak istiyorum yani aslında görüntünün bi metnin sağına veya soluna kaymasına izin vermek istiyorum..
+                       işte burada CSS float özelliği kullnılır...</p>   <!--resmin metnin sağında olmasını istiyosanda float:right diyebilirsin--> 
+
+    <!--<map></map>  bu map elementi bir img elementi ve herhangi bir alan elementi torunu ile bağlantılı olarak,bir görüntü haritasını tanımlar
+                         Element onun çocuklarını temsil eder.yani aslına ben map ile istediğim haritanın üzerinde oynamalar yapabiliyorum.
+        BİR görüntü eşlemesi tanımlamak için <map> öğesini kullanıyoruz..YANİ BİR RESİM-HARİTA TANIMLAR
+    <img src="planets.gif" alt="Planets" usemap="#planetmap" style="width:145px;height:126px;">  bir resim-haritaya işaret etmek için <img> öğesini usemap attribute ı kullanılır..
+
+    <map name="planetmap">
+        <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">   RESİM-HARİTASI İÇİNDE tıklanabilir alanları yaratmak için <area> kullanıyoruz...
+        <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">   HOCAYA COODRS AYARLAMAYI SOR!!
+        <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+    </map>-->
+    ********************************************* 
+    HTML DE TABLO YARATMA!!!!!!!
+    1) tablo oluşturmak için öncelikle <table> </table>  etiketlerini açıp herşeyi bunun içerisinde tanımlıcaksın!!!
+    2)Tablonun her satırını yazmak için <tr></tr> etiketlerini kullanıcaksın!!
+    3)Satırını oluşturdun diyelim.Her zaman tablonun ilk satırında üst bilgi yazar.Buda varsayılan olarak kalın ve ortalanmıştır.Üst bilgi yazmak
+    için <th></th> etiketleri kullanılır
+    4)Üst bilgini(isim soyisim yas) oluşturdun.artık satırlarının hücrelerine verilerini girebilirsin.Bunu için tekrar satır oluşturup
+    <td></td> etikiti kullanarak girebilirsin bu üst yazıya göre daha ince yazıcak..
+    <table style="width:100%">   <!--buradaki stil tabloların genişliğini ayarlamak için.büyüttükçe/küçülttükçe aralardaki boşluk artıyo/azalıo..-->
+        <tr>
+            <td>veriler</td>   <!--genel yapı bu.en üst satıra bilgi gireceksen sadece en üst satır için td yerine <th></th> etiketlerni yaz..-->
+        </tr>
+    </table>
+    
+    5)Mesela tablo başlıkların isim ve telefon.normalde her satırda başlık sayısına göre hücre sayısı olur.ama ben telefonun altında yanyana 2 tane hücre
+    yani 2 sütun olsun istiyorum..YANİ HÜCRE YAYILMASI BİRDEN PAZLA SÜTUNDA....--->COLSPAN  COLUMN::SÜTUN
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th colspan="2">Telephone</th>          <!--colspan="hücre sayısı"-->
+        </tr>
+        <tr>
+            <td>Bill Gates</td>                      <!--name in altında bill gates yazar.telefonun altında 2 sütun açılmıştır yanyana ve telefonlar o hücrelerde yazar-->
+            <td>55577854</td>                                                       
+            <td>55577855</td>
+        </tr>
+    </table>
+    6) HÜCRE YAYILMASI BİRDEN FAZLA SATIRDA....--->ROWSPAN    ROW:SATIR
+    <table style="width:100%">
+        <tr>
+            <th>Name:</th>
+            <td>Bill Gates</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Telephone:</th>    <!--telefon başlığımın iki tan satırı olsun diyorsun burada.-->
+            <td>55577854</td>
+        </tr>
+        <tr>
+            <td>55577855</td>
+        </tr>
+    </table>
+   
+     7)<table>
+    <caption>BAŞLIK</caption>  <!--Eğer tabloya başlık eklemek istersen <caption></caption>etiketlerini kullan-->
+    <tr>                                <!--ve bu etiketleri <table></table> etiketlerinden hemen sonra yaz-->
+        <td></td>
+    </tr>
+</table>
+    8)<table id="isim">   <!--tabloma bu  şekilde id tanımladım.. bunu css de yazmak için table#isim{} bunun içeriisne stilleri tanımlıcam-->
+    <tr>
+        <td></td>
+    </tr>
+</table>
+    <!--mesela sayfamda bir kaç tane tablo var. ama ben bir tablonun farklı stilde olmasını istiyorum
+      o zaman tabloya id attribute nı eklicem..sonra ona özel stil tanımlamak içinde css dosyasına gidip table#idİsmi{} yazıcam,
+     süslü parantezler içerisine yazıcaz istediğimiz stilleri yada aynısını index sayfasında head etiketleri arasında style etiketleri açarak bunların arasına yazıcaz-->
+   
+    HTML de LİSTELER !!! bu defterde var.ama;
+                                       <!--sırasız listede maddelerin başında siyah yuvarlak işaretler olur.bunları değiştirebilirin-->
+    <ul style="list-style-type:disc">  <!--disc:bu varsayılandır.yazmadanda gelir. circle:içi boş daire yapıyo square:kare none: hiç bir işaret gelmiyo-->
+        <li>..</li>                      
+        <li>..</li>                     
+    </ul> 
+
+                                       <!--sıralı listede ise varsayılan olarak maddelerin başında 1,2 .. yazar.bunları değştireblirisn..-->
+    <ol type="A">                       <!--burada maddelerin başında sırayla büyük harfler yazar.A,B,C..-->
+        <li>..</li>                     <!--küçük harf için type="a" roman rakamı için type="I" yaz  küçük rama sayıları için type="ı"--> 
+        <li>..</li>
+    </ol>
+
+    htmlde açıklama liteleride vardır
+    <dl>                                       <!--bu <dl></dl> etiketi açıklama listesıni tanımlıyor-->
+        <dt>Kahve</dt>                         <!--altında açıklama yapılmasını istediğin terimi tanımlıyo.yani terimi buraya  yazıyosun.tanımalma terimi için-->
+        <dd>siyah sıcak içecek</dd>            <!--buda yukarıda yazdığının tanımını yapman için etikettir.aslında yuklarıdaki terimin sağından başlatıyo.terimi tanımlama listesinde tanımlamak için-->
+        <dt>Süt</dt>
+        <dd>Beyaz soğuk İçecek</dd>
+    </dl>
+    <!--BU LİSTE önemli.HTML listeleri CSS ile birçok farklı şekilde biçimlendirilebilir.
+    Popüler bir yol olan yatayda bir menü oluşturmak için yatay bir şekilde bir liste biçimlendirmektir..-->w3Schools.css dosysına bak.orada açıklandı.-->
+    *************
+    <!--mesela bir başlık ve bu başlığın altında bir paragraf var.bu kısmı bir blok olarak düşün.bu metinde yani blokta stil tanımlaması yapıcaksın
+    bunun için <div></div> etiketi kullanıcaksın..yani;-->
+    
+    <div style="background-color:black;color:white;padding:20px;">  <!--yazılan metni bunun içerisine yaz!!yani blokta(metinde) değişiklik yapmak istersen div kullanılır..-->
+       <h2>...</h2>                                                 <!--yani ilk satırdan başlatıp mevcut olan tüm genişliği içine alır.mümkün olduğunca sağa veya sola doğru uzanır-->
+    <p>.......</p>                                                          <!--div bir blok düzeyinde öğedir-->
+    </div>
+
+    <h1> BENİM <span style="color:red;">ADIM</span> ŞEYDA</h1>       <!--<span></span> ise tüm genişliği değilde metnin herhengi bir yerinde değişiklik yapmak istiyosan yani sadece seçili tarafı değştiriyo-->
+                                                                        <!--yani bir satıriçi öğesiidir.Yani burada sadece adım yazısını değiştirmek istemişim.span yazıp stil tanımlamışım-->
+
+    <!--div ve span a sınıf ataması yapabilirsin...yazdığın farklı farklı bloklar var diyelim.her blok farklı stilde olsun istiysun
+    her blok başındaki div e <div class="Örnek">..</div> şeklinde sınıf atayıp css de bunu div.Örnek{..} şeklinde stilleyebilirim
+    yada aynı şeyi span da da yapıp span.Örnek{..} şeklinde yapabilirsinn..-->
+
+    <iframe src="URL"></iframe>               <!--bir web sayfası içinde web sayfası görüntülemek istiyosan <iframe></iframe> etiketi kullanılır-->
+    <iframe src="URL" height="200" width="300"></iframe>     <!--iframe boyutunu belirlemek için kullandık.varsayılan olarak pikseldir.ancak yüzdelerde olabilir(80% gibi)-->
+    <iframe src="URL"  style="border:none;"></iframe>        <!--varsayılan olarakbir iframe kenarlıklara sahiptir.bu kenarlığı kaldırmak için style atyribute kullandık ve css border özelliği kullanıldı-->
+    <iframe src="URL" style="border:2px solid grey;"></iframe>   <!--yada css ile kenarlık boyutunu stilini ve rengini değiştireblirim-->
+    
+    <iframe height="300px" width="100%"  src="URL" name="iframe_a"></iframe>      <!--burada ben w3schools.com a tıkladığımda iframe in içinde www.w3schools.com adresi açılır-->
+    <p><a href="https://www.w3schools.com" target="iframe_a">W3schools.com</a></p>
+******************************************************
+   <meta /> elemanı sayfa açıklama,anahtar kelimeler,yazar ve diğer başka metadata gibi kullanılan karakter setlerini belirtmek için kullanılır
+    metadatalar taracılar tarafından (içeriğin nasıl görüntülendiği),arama motorları tarafından(anahtar kelimeler) ve diğer web servisleri tarafından kullanılır.
+    <meta charset="utf-8">   <!--bu kullanılan karakter setini tanımlar-->
+    <meta name="description"  content="Ücretsiz WEb eğitimmi">    <!--bu web sayfamızınn bir tanımını tanımlıyor-->
+    <meta name="keywords" content="HTML,CSS,XML,Javascript" />      <!--bu arama motorları için anahtar kelimleri tanımlıyo-->
+    <meta name="author" content="John Doe">      <!--bu bir sayfanın yazarını tanımlıyo-->
+    <meta http-equiv="refresh"  content="30">     <!--bu sayfayı her 30 saniyede bir yeniliyo-->
+    Bütün meta bilgiler body den önce gelir
+
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0">  <!--HTML5 web tasarımcılarının görüntüleme alanını <meta /> etiketi üzerinden
+    izin beren bir yöntem geliştirdi.viewport yani görünüm alanı kullanıcının web sayfasının görünü alanıdır.Cihaza göre değişi ve bir cep telefonunda bir
+    bilgisyar ekranına göre daha küçük olacaktır.Tüm web sayfalarına bu görüntüleme alanı öğesini eklememiz gerekir.Bir meta görüntüleme alanı unsuru tarayıcının
+   sayfanın boyutlarını ve ölçeklemesini kontrol etme talimatlarını verir..width=device-width kısmı sayfanın genişliğini cihazın ekran genişliğini takip edecek şekilde
+    ayarlar(cihaza göre değişir)..initial-scale=1.0(ilk-ölçek=1.0) sayfa,tarayıcı tarafından ilk kez yüklendiğinde başlangıç yakınlaştırma düzeyini ayarlar-->
+
+    <base />  HOCAYA SORRR!!!!
+    *************************
+    HTML5 SAYFA DÜZENİ ÖENMLİDİR...
+    arama motorları daha etkin içerikkler okuyabilsinler diye ,insanların aramalarında daha doğru sonuçlar üretebilsinler diy html5 yeni elementler ekledi.
+    BU ELEMENTLER ARAMA MOTORLARINA BİLGİ VERİYR.....!!! header,nav,section,article,aside,footer,details,summary
+    <div class="container">
+        <header>
+            <!--BURADA başlığa header etiketi eklemiş.bu header arama motorları için senin başlığını işaretlemeni sağlıyo.yani bir belgenin yada bölümün üst bilgisini tanımlıyor-->
+            <h1>City Gallery</h1>
+        </header>
+        <nav>
+            <!--sitenin linklerinin bulunduğu yer vardır.sen bu linkleri nav ile işaretlediğin zaman arama motorları gelip orada bir link topluluğu olduğunu farkediyo-->
+            <ul>
+                <!--ve o linklerin hepsini indeksliyo-->
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Tokyo</a></li>
+            </ul>
+        </nav>
+        <article>
+            <!--senin sayfa içerisindeki bütün içerik kısmını bildirebileceğin .bütün sectionlar tek bir article içerisinde..-->
+            <h1>London</h1>
+            <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+            <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+        </article>
+        <footer>Copyright &copy; W3Schools.com</footer>    <!--bir belge veya bölüm için alt bilgi tanımlıyo-->
+
+    </div>
+    bir html düzeni oluşturmak istersen W3.CSS veya Bootstrap gibi bir framework kullanabilirsiz.!!!
+    CSS float özelliği kullanarak bir web düzeni yapmak yaygın bir özelliktir.BU bölümü CSS bölümünde öğreneceksin...
+    Yine düzen için CSS Flexbox kullanabilirisin.Flexbox css3 te yeni bir düzen metodudur.bunların ayrıntılarını CSS  de öğreneceksin
+    Ssonra duyarlı web tasarımı yapmak var.bunuda CSS de RWD Eğitiminde öğreneceksin.
+    Duyarlı bir web tasarım oluşturmak için W3.CSS kullanılabilir.Bunu CSS de öğreneceksin
+    
+
+
+
+
+        
+
+    
+
+                                                                                
+                                                              
+                                                                               
+
+</body>
+  
+</html>
